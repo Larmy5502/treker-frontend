@@ -1,0 +1,244 @@
+body {
+  margin: 0;
+  background-color: #eaf6ff;
+  height: 100vh;
+  font-family: 'Mulish', sans-serif;
+}
+
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.login-left {
+  flex: 1;
+  background-color: #eaf6ff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.logo {
+  font-weight: 1000;
+  font-size: 32px;
+  letter-spacing: 7%;
+  color: #000000b3;
+  margin: -12px 0px 0px 55px;
+}
+
+.illustration {
+  position: absolute;
+  width: 848px;
+  height: 636px;
+  margin-top: auto;
+  margin-bottom: 100px;
+  align-self: center;
+  margin-top: 155px;
+}
+
+/* Разделительная линия */
+.divider {
+  width: 1px;
+  background-color: #000000;
+  height: 100%;
+  align-self: center;
+}
+
+/* Правая часть */
+.login-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===================== LOGIN ===================== */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.login-box h2 {
+  font-weight: 1000;
+  font-size: 28px;
+  letter-spacing: -0.25px;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.login-box input {
+  font-weight: 300;
+  width: 548px;
+  height: 47px;
+  letter-spacing: 0.11em;
+  padding: 0 16px;
+  border: 1.5px solid #000;
+  border-radius: 8px;
+  font-size: 16px;
+  font-style: italic;
+  color: #464A4C;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-box input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.login-box button {
+  width: 375px;
+  height: 38.67px;
+  background-color: #c0def5;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-top: -0.5rem;
+}
+
+.login-box button:hover {
+  background-color: #a6cdee;
+}
+
+.login-box .link {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #464A4C;
+}
+
+/* ===================== REGISTER ===================== */
+.register-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding-top: 3rem;
+}
+
+
+.register-box h2 {
+  font-weight: 1000;
+  font-size: 28px;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+
+.name-row {
+  display: flex;
+  gap: 3rem;
+  width: 548px;
+  margin-bottom: 14px;
+}
+
+.name-row .half {
+  width: 50%;
+  height: 41px;
+  padding: 0 16px;
+  border: 1.5px solid #000;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px;
+  font-style: italic;
+  color: #464A4C;
+  background: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  letter-spacing: 0.11em;
+}
+
+.register-box input:not(.half) {
+  font-weight: 300;
+  width: 548px;
+  height: 47px;
+  letter-spacing: 0.11em;
+  padding: 0 16px;
+  border: 1.5px solid #000;
+  border-radius: 8px;
+  font-size: 16px;
+  font-style: italic;
+  color: #464A4C;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.register-box input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+.consent {
+  display: flex;
+  align-items: center;
+  width: 548px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  color: #000000;
+  margin: -15px 0px 15px 0px;
+  gap: 0.5rem;
+}
+
+.consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #000;
+  margin: 0;
+}
+
+.register-box button {
+  width: 375px;
+  height: 38.67px;
+  background-color: #c0def5;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 900;
+  font-size: 14px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.register-box button:hover {
+  background-color: #a6cdee;
+}
+
+.back-link {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #464A4C;
+  margin: 70px 0px 0px -135px;
+  align-self: flex-start;
+}
