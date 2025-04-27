@@ -1,0 +1,95 @@
+.board-columns {
+  display: flex;
+  justify-content: center; /* Центровка всех колонок */
+  gap: 20px; /* Отступ между колонками */
+}
+
+.board-section {
+  flex: 0 0 300px;
+  min-width: 250px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f9fd;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  height: auto;
+  gap: 12px;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2b3b4e;
+  margin-bottom: 10px;
+  gap: 8px; /* Небольшой отступ между текстом и кнопкой */
+}
+
+.section-header-title {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Чтобы текст и цифра/иконка были ближе */
+}
+
+.section-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Отступ между плюсиком и счётчиком */
+}
+
+.section-title {
+  font-weight: 900;
+  font-size: 18px;
+  color: #2b3b4e;
+}
+
+.task-count {
+  background-color: #dceeff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2b3b4e;
+}
+
+.board-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.board-section-header h3 {
+  font-size: 16px;
+  font-weight: 900;
+  color: #2b3b4e;
+}
+
+.add-task-btn {
+  background-color: #cce0f5;
+  border: 1px solid #4a6392;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2b3b4e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s;
+}
+
+.add-task-btn:active {
+  transform: scale(0.95);
+}
+
+.board-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}

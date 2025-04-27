@@ -1,0 +1,336 @@
+/* Общая разметка */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Верхняя панель */
+.top-navbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: #C4D9EB;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* Контейнер контента */
+.page-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #eaf6ff;
+}
+
+/* Боковая панель */
+.sidebar-left {
+  background-color: #C4D9EB;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 15;
+}
+
+.sidebar-left.expanded {
+  width: 220px;
+}
+
+.sidebar-left.collapsed {
+  width: 0;
+  background-color: transparent;
+}
+
+/* Оверлей блюр */
+.overlay-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(1px);
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 12;
+  transition: opacity 0.3s ease;
+}
+
+/* Контент с top-navbar */
+.content-with-topbar {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Основной контент */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaf6ff;
+  padding: 24px 40px;
+  min-height: calc(100vh - 56px);
+  box-sizing: border-box;
+}
+
+.project-board {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  justify-content: center;
+}
+
+/* Правая полоска */
+.right-strip {
+  width: 61px;
+  background-color: #C4D9EB;
+}
+
+/* --- Разметка доски задач --- */
+.board-box {
+  width: 1384px;
+  min-height: calc(100vh - 150px);
+  background-color: #f4f9fd;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.board-tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 100px; /* ➡️ вот это добавляем! */
+}
+
+.board-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.board-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.board-title {
+  font-family: 'Mulish', sans-serif;
+  font-size: 28px;
+  font-weight: 1000;
+  color: #2b3b4e;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0px 0px 20px 10px;
+}
+
+.board-add-btn {
+  background-color: #e0e8f0;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2b3b4e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background-color 0.2s ease;
+  margin: -20px 0px 0px 0px;
+}
+
+.board-add-btn:hover {
+  background-color: #d1dce9;
+}
+
+.board-columns {
+  display: flex;
+  height: 100%;
+  gap: 0px;
+  position: relative;
+}
+
+.board-section {
+  flex: 1;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.board-section:not(:last-child) {
+  border-right: 2px solid #2b3b4e;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #2b3b4e;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #2b3b4e;
+  margin-bottom: 16px;
+  font-size: 22px;
+}
+
+.task-card {
+  background-color: #dce6f2;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.task-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b3b4e;
+  margin: 0;
+  padding-right: 8px;
+}
+
+.task-user-icon {
+  font-size: 16px;
+}
+
+.task-count {
+  background-color: #dceeff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.add-column {
+  background-color: #dceeff;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 6px 12px;
+  color: #2b3b4e;
+  cursor: pointer;
+}
+
+.columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.column {
+  flex: 1;
+  background-color: #f8fbfd;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #d1dce9;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.column-header {
+  font-weight: 700;
+  border-bottom: 2px solid #2b3b4e;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+  color: #2b3b4e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-menu-wrapper {
+  position: relative;
+}
+
+.task-menu-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #2b3b4e;
+  cursor: pointer;
+}
+
+
+.task-menu-dropdown {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.task-menu-dropdown button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #2b3b4e;
+  cursor: pointer;
+  padding: 4px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.task-card-bottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 8px;
+}
+
+
+.task-user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
