@@ -83,6 +83,7 @@ export function useRegisterHandler() {
         email: form.email,
         phone: form.phoneRaw,
         password: form.password,
+        re_password: form.confirmPassword,
       })
 
       localStorage.setItem('token', data.token)

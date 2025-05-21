@@ -7,17 +7,42 @@ function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!email || !password) {
       setError('Введите почту и пароль')
       return
     }
 
-    // Заглушка — в будущем будет проверка с сервером
-    console.log('Вход: ', { email, password })
-    localStorage.setItem('token', 'dummy-token')
-    navigate('/project')
+    try {
+      setLoading(true)
+      setError('')
+
+      const response = await fetch('http://localhost:8000/auth/jwt/create/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, password }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.detail || 'Ошибка входа')
+      }
+
+      // Сохраняем токены
+      localStorage.setItem('access', data.access)
+      localStorage.setItem('refresh', data.refresh)
+
+      navigate('/project')
+    } catch (err) {
+      setError(err.message)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -48,8 +73,13 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button onClick={handleLogin}>ВОЙТИ</button>
-          <p className="link" onClick={() => navigate('/register')}>РЕГИСТРАЦИЯ</p>
+          <button onClick={handleLogin} disabled={loading}>
+            {loading ? 'Загрузка...' : 'ВОЙТИ'}
+          </button>
+
+          <p className="link" onClick={() => navigate('/register')}>
+            РЕГИСТРАЦИЯ
+          </p>
         </div>
       </div>
     </div>

@@ -99,3 +99,38 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+.task-item {
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+  transition: filter 0.2s;
+}
+
+.task-item:hover {
+  filter: brightness(50%);
+}
+
+.task-item:active {
+  filter: brightness(30%);
+}
+
+.add-menu {
+  padding: 16px;
+  position: relative;
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 16px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}

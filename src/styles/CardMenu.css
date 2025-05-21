@@ -1,31 +1,96 @@
 .card-menu {
   position: absolute;
-  top: 30px;
-  right: 10px;
-  background-color: #f4f9fd;
-  border: 1px solid #4a6392;
+  top: 100%;
+  left: 0;
+  width: 240px;
+  background-color: #c6d9ec;
+  border: 1px solid #a5b4c4;
   border-radius: 8px;
-  padding: 10px;
-  width: 220px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 10;
+  padding: 0;
+  font-family: 'Mulish', sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 20;
 }
 
-.card-menu-title {
-  font-weight: 700;
-  margin-bottom: 10px;
+.card-menu__title {
+  font-weight: bold;
+  color: #0d1b2a;
+  padding: 10px 16px;
+  border-bottom: 1px solid #a4b2c7;
 }
 
-.card-menu-item {
-  padding: 6px 0;
-  font-size: 14px;
+.card-menu__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
   cursor: pointer;
+  color: #2b3b4e;
+  gap: 8px;
+  position: relative;
+  border-bottom: 1px solid #a4b2c7;
+  box-sizing: border-box;
 }
 
-.card-menu-subitem {
-  font-size: 12px;
-  color: #4a6392;
-  padding-left: 16px;
-  padding-top: 4px;
+.card-menu__item:hover {
+  background-color: #b8cde5;
+}
+
+.card-menu__item img {
+  width: 18px;
+  height: 18px;
+}
+
+.arrow {
+  margin-left: auto;
+  font-weight: bold;
+  color: #2b3b4e;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.card-menu__submenu {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 0 8px 40px;
+  background-color: #c6d9ec;
+  border-bottom: 1px solid #a4b2c7;
+}
+
+.card-menu__submenu button {
+  background: none;
+  border: none;
+  padding: 4px 0;
+  text-align: left;
+  color: #2b3b4e;
   cursor: pointer;
+  font-size: 13px;
+}
+
+.card-menu__submenu button:hover {
+  text-decoration: underline;
+}
+
+.card-menu__item.delete {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  color: red;
+  font-weight: bold;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-top: 1px solid #a4b2c7;
+  border-bottom: none;
+}
+
+.card-menu__divider {
+  height: 1px;
+  background-color: #a4b2c7;
+  margin: 0;
 }

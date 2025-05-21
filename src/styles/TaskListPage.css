@@ -1,0 +1,75 @@
+.task-list-wrapper {
+  padding: 24px 40px;
+  background-color: #eaf6ff;
+  font-family: 'Mulish', sans-serif;
+}
+
+.task-list-header {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: #2b3b4e;
+}
+
+.task-table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.task-table-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  background-color: #f8fbfd;
+}
+
+.task-table-row.header {
+  background-color: #dce6f2;
+  font-weight: bold;
+}
+
+.cell {
+  padding: 12px;
+  border-right: 1px solid #ccc;
+  font-size: 14px;
+  color: #2b3b4e;
+  display: flex;
+  align-items: center;
+}
+
+.cell:last-child {
+  border-right: none;
+}
+
+/* Set width for each column */
+.cell.checkbox { width: 40px; justify-content: center; }
+.cell.id { width: 80px; }
+.cell.title { flex: 2; }
+.cell.priority,
+.cell.type,
+.cell.tag,
+.cell.deadline,
+.cell.author,
+.cell.performer,
+.cell.parent {
+  flex: 1;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 6px;
+  object-fit: cover;
+}
+
+.tag-label {
+  background-color: #c4d9eb;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: #2b3b4e;
+}

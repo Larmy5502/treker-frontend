@@ -1,11 +1,11 @@
 .top-navbar {
-  background-color: #C4D9EB;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 24px;
   height: 56px;
   box-sizing: border-box;
+  background-color: #C4D9EB;
   font-family: 'Mulish', sans-serif;
 }
 
@@ -15,15 +15,12 @@
 }
 
 .top-nav-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: relative;
 }
-
 
 .project-name {
   display: flex;
@@ -106,15 +103,16 @@
 }
 
 .nav-btn:not(.active):active {
-  transform: scale(0.97); /* маленькое нажатие */
+  transform: scale(0.97);
 }
 
 .nav-btn.active {
-  background-color: #ffffff;
-  color: #2b3b4e;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  cursor: default;
-  transform: none;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  font-weight: bold;
+  transform: translateY(-1px);
 }
 
 .nav-btn:focus {
@@ -126,23 +124,6 @@
   width: 1px;
   height: 100%;
   background-color: #a4b8cc;
-}
-
-
-
-/* Кастомная кнопка фильтра */
-.custom-filter-btn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 6px 16px;
-  background-color: #C4D9EB;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 13px;
-  border: 1px solid #3D5A80;
-  height: 40px;
-  cursor: pointer;
 }
 
 .filter-logo {
@@ -203,7 +184,6 @@
   border-radius: 2px;
 }
 
-/* СПИСОК */
 .list-icon {
   display: flex;
   flex-direction: column;
@@ -217,7 +197,6 @@
   border-radius: 2px;
 }
 
-/* ОТЧЕТЫ */
 .chart-icon {
   display: flex;
   align-items: flex-end;
@@ -242,14 +221,12 @@
   height: 14px;
 }
 
-/* ПЛЮС */
 .plus-icon {
   font-size: 16px;
   color: #3d5a80;
   line-height: 1;
 }
 
-/* Меню профиля */
 .profile-menu {
   position: absolute;
   top: 70px;
@@ -353,4 +330,73 @@
   font-family: 'Mulish', sans-serif;
   width: 350px;
   box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.topnav-add-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.topnav-dropdown {
+  position: absolute;
+  background-color: #C4D9EB;
+  border: 2px solid #4A6392;
+  top: 100%;
+  left: 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 170px;
+  padding: 4px 0;
+  z-index: 2000;
+}
+
+.topnav-dropdown button {
+  background: none;
+  border: none;
+  color: #2b3b4e;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.topnav-dropdown button:hover {
+  background-color: #b5cadf;
+}
+
+.topnav-dropdown img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.nav-btn.add-main {
+  background-color: #C4D9EB;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b3b4e;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.2s ease;
+  outline: none;
+  box-shadow: none;
+}
+
+.topnav-dropdown .nav-btn {
+  width: 100%;
+  text-align: left;
+  padding: 6px 12px;
+  font-size: 13px;
+  background-color: white;
+  border: none;
+  font-weight: 600;
 }

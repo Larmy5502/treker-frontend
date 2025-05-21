@@ -93,3 +93,21 @@
   flex-direction: column;
   gap: 12px;
 }
+
+.column-title-input {
+  font-size: 18px;
+  font-weight: bold;
+  border: 1px solid #4a6392;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 100%;
+  color: #2b3b4e;
+}
+
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}

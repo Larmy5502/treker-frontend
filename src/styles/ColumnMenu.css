@@ -1,0 +1,123 @@
+.column-menu {
+  position: absolute;
+  top: 32px;
+  right: 0;
+  width: 260px;
+  background-color: #c6d9ec;
+  border: 1px solid #a5b4c4;
+  border-radius: 8px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 30;
+}
+
+.column-menu .card-menu__title {
+  font-weight: bold;
+  color: #0d1b2a;
+  padding: 10px 16px;
+  border-bottom: 1px solid #a4b2c7;
+}
+
+.column-menu .card-menu__item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2b3b4e;
+  gap: 8px;
+  border-bottom: 1px solid #a4b2c7;
+  box-sizing: border-box;
+}
+
+.column-menu .card-menu__item.delete {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  color: red;
+  font-weight: bold;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-top: 1px solid #a4b2c7;
+}
+
+.column-menu .card-menu__item:hover:not(.no-hover):not(.delete) {
+  background-color: #b8cde5;
+}
+
+.card-menu__item.no-hover {
+  cursor: default;
+}
+
+.card-menu__item.no-hover:hover {
+  background-color: transparent;
+}
+
+.column-menu .card-menu__item.no-hover {
+  flex-direction: column !important; /* теперь вертикально */
+  align-items: flex-start !important; /* текст слева */
+  gap: 4px;
+  padding-left: 16px; /* отступ слева для подменю */
+}
+
+.column-menu .card-menu__submenu {
+  flex-direction: row !important; /* стрелки горизонтально */
+  gap: 8px;
+  width: auto; /* чтобы не сжимать */
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.column-menu .card-menu__submenu button {
+  background: none;
+  border: none;
+  padding: 0;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.column-menu .card-menu__submenu button img {
+  width: 50px;
+  height: 25px;
+  transition: filter 0.2s ease;
+  pointer-events: none;
+}
+
+.column-menu .card-menu__submenu button:hover img {
+  filter: brightness(0.9);
+}
+
+.column-menu .card-menu__submenu button:active img {
+  filter: brightness(0.8);
+}
+
+.column-menu-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #333;
+  line-height: 1;
+  transition: background 0.2s;
+}
+
+.column-menu-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.column-menu .card-menu__submenu button:nth-child(3) img {
+  transform: scale(1.2);
+}
