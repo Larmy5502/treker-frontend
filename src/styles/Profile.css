@@ -1,18 +1,18 @@
-/* Общая раскладка */
+
 .layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Страница профиля */
+
 .profile-page {
   display: flex;
   height: calc(100vh - 56px);
   background-color: #eaf6ff;
 }
 
-/* Левая панель */
+
 .profile-sidebar {
   width: 300px;
   background-color: #cce0f5;
@@ -38,7 +38,7 @@
   border-right: 3px solid #4a6392;
 }
 
-/* Правая часть */
+
 .profile-content {
   flex: 1;
   padding: 40px;
@@ -73,7 +73,7 @@
   color: #4a6392;
 }
 
-/* Форма профиля */
+
 .profile-form {
   width: 600px;
   display: flex;

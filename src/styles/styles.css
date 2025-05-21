@@ -39,7 +39,7 @@ body {
   margin-top: 155px;
 }
 
-/* Разделительная линия */
+
 .divider {
   width: 1px;
   background-color: #000000;
@@ -47,7 +47,7 @@ body {
   align-self: center;
 }
 
-/* Правая часть */
+
 .login-right {
   flex: 1;
   display: flex;
@@ -55,7 +55,7 @@ body {
   align-items: center;
 }
 
-/* ===================== LOGIN ===================== */
+
 .login-box {
   display: flex;
   flex-direction: column;
@@ -126,7 +126,7 @@ body {
   color: #464A4C;
 }
 
-/* ===================== REGISTER ===================== */
+
 
 .info-message {
   margin-bottom: 1rem;

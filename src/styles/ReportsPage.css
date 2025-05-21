@@ -1,15 +1,15 @@
 .reports-container {
   display: flex;
   justify-content: center;
-  gap: 60px; /* расстояние между блоками */
+  gap: 60px; 
   padding: 60px 20px;
   background-color: #e6f2fd;
   min-height: 100vh;
 }
 
 .report-card {
-  width: 380px; /* увеличенная ширина */
-  height: 460px; /* увеличенная высота */
+  width: 380px; 
+  height: 460px; 
   background-color: white;
   border: 1px solid #6c8cab;
   border-radius: 16px;

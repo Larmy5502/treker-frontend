@@ -44,7 +44,7 @@
   border-right: none;
 }
 
-/* Set width for each column */
+
 .cell.checkbox { width: 40px; justify-content: center; }
 .cell.id { width: 80px; }
 .cell.title { flex: 2; }

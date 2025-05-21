@@ -73,11 +73,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer; /* <<< ВАЖНО! */
+  cursor: pointer; 
 }
 
 .project-icon {
-  width: 18px; /* Теперь это для картинки */
+  width: 18px; 
   height: 18px;
   object-fit: contain;
 }

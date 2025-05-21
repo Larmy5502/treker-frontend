@@ -1,7 +1,7 @@
 .board-columns {
   display: flex;
-  justify-content: center; /* Центровка всех колонок */
-  gap: 20px; /* Отступ между колонками */
+  justify-content: center; 
+  gap: 20px; 
 }
 
 .board-section {
@@ -26,19 +26,19 @@
   font-size: 18px;
   color: #2b3b4e;
   margin-bottom: 10px;
-  gap: 8px; /* Небольшой отступ между текстом и кнопкой */
+  gap: 8px; 
 }
 
 .section-header-title {
   display: flex;
   align-items: center;
-  gap: 8px; /* Чтобы текст и цифра/иконка были ближе */
+  gap: 8px; 
 }
 
 .section-header-right {
   display: flex;
   align-items: center;
-  gap: 8px; /* Отступ между плюсиком и счётчиком */
+  gap: 8px; 
 }
 
 .section-title {

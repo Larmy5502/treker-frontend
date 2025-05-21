@@ -60,16 +60,16 @@
 }
 
 .column-menu .card-menu__item.no-hover {
-  flex-direction: column !important; /* теперь вертикально */
-  align-items: flex-start !important; /* текст слева */
+  flex-direction: column !important; 
+  align-items: flex-start !important; 
   gap: 4px;
-  padding-left: 16px; /* отступ слева для подменю */
+  padding-left: 16px; 
 }
 
 .column-menu .card-menu__submenu {
-  flex-direction: row !important; /* стрелки горизонтально */
+  flex-direction: row !important; 
   gap: 8px;
-  width: auto; /* чтобы не сжимать */
+  width: auto; 
   padding: 0;
   justify-content: flex-start;
 }

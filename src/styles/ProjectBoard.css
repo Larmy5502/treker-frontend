@@ -1,4 +1,4 @@
-/* Общая разметка */
+
 .layout {
   min-height: 100vh;
   display: flex;
@@ -87,7 +87,7 @@
   background-color: #C4D9EB;
 }
 
-/* --- Доска задач --- */
+
 .board-box {
   min-width: max-content;
   min-height: calc(100vh - 150px);
@@ -110,9 +110,9 @@
 .board-wrapper {
   width: 100%;
   height: 100%;
-  overflow-x: auto; /* Добавлено */
+  overflow-x: auto; 
   display: flex;
-  justify-content: flex-start; /* Изменено */
+  justify-content: flex-start; 
 }
 
 
@@ -163,7 +163,7 @@
   background-color: #d1dce9;
 }
 
-/* Колонки */
+
 .board-columns {
   display: flex;
   align-items: stretch;
@@ -187,7 +187,7 @@
   border-right: 2px solid #2b3b4e;
 }
 
-/* Заголовки колонок */
+
 .section-header {
   display: flex;
   justify-content: space-between;
@@ -200,7 +200,7 @@
   font-size: 22px;
 }
 
-/* Список задач */
+
 .board-tasks {
   display: flex;
   flex-direction: column;
@@ -208,7 +208,7 @@
   flex-grow: 1;
 }
 
-/* --- Карточки задач --- */
+
 .task-card {
   background-color: #dce6f2;
   border-radius: 8px;
