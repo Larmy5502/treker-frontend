@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // src/components/TopNavbar.jsx
+=======
+>>>>>>> ace2cd8 (финал 1)
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import '../styles/TopNavbar.css';
@@ -6,9 +9,12 @@ import '../styles/TopNavbar.css';
 import avatarIcon from '../assets/avatar_9341633 2.svg';
 import boardsIcon from '../assets/boards.png';
 import appendIcon from '../assets/append.png';
+<<<<<<< HEAD
 import letterIcon from '../assets/letter.png';
 import faqIcon from '../assets/faq.png';
 import searchIcon from '../assets/search.png';
+=======
+>>>>>>> ace2cd8 (финал 1)
 import letterpIcon from '../assets/letterp.png';
 import cardIcon from '../assets/card.png';
 import listIcon from '../assets/list.png';
@@ -17,7 +23,10 @@ import columnIcon from '../assets/column.png';
 
 function TopNavbar({
   toggleSidebar,
+<<<<<<< HEAD
   isSidebarOpen,
+=======
+>>>>>>> ace2cd8 (финал 1)
   hideNavButtons,
   boardsByProject,
   setBoardsByProject,
@@ -29,6 +38,13 @@ function TopNavbar({
   const currentPath = location.pathname;
 
   const [projectTitle, setProjectTitle] = useState('');
+<<<<<<< HEAD
+=======
+  const [inputValue, setInputValue] = useState('');
+  const [isEditing, setIsEditing] = useState(false);
+  const inputRef = useRef(null);
+
+>>>>>>> ace2cd8 (финал 1)
   const [userInfo, setUserInfo] = useState({ email: '', fullName: '' });
   const [isAddMenuOpen, setIsAddMenuOpen] = useState(false);
   const addBtnRef = useRef(null);
@@ -36,10 +52,15 @@ function TopNavbar({
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const [isComingSoonOpen, setIsComingSoonOpen] = useState(false);
 
+<<<<<<< HEAD
   // Скрывать кнопку "ДОБАВИТЬ" на страницах СПИСОК (/list) и ОТЧЕТЫ (/reports)
   const hideAddButton = currentPath.includes('/list') || currentPath.includes('/reports');
 
   // Загрузка информации о пользователе
+=======
+  const hideAddButton = currentPath.includes('/list') || currentPath.includes('/reports');
+
+>>>>>>> ace2cd8 (финал 1)
   useEffect(() => {
     const token = localStorage.getItem('access');
     if (!token) return;
@@ -56,7 +77,10 @@ function TopNavbar({
       .catch(console.error);
   }, []);
 
+<<<<<<< HEAD
   // Загрузка названия проекта
+=======
+>>>>>>> ace2cd8 (финал 1)
   useEffect(() => {
     const token = localStorage.getItem('access');
     if (!token || !projectId) return;
@@ -73,7 +97,10 @@ function TopNavbar({
     }
   }, [projectId, boardsByProject]);
 
+<<<<<<< HEAD
   // Вычисляем позицию выпадающего меню добавления
+=======
+>>>>>>> ace2cd8 (финал 1)
   useEffect(() => {
     if (isAddMenuOpen && addBtnRef.current) {
       const rect = addBtnRef.current.getBoundingClientRect();
@@ -84,6 +111,7 @@ function TopNavbar({
     }
   }, [isAddMenuOpen]);
 
+<<<<<<< HEAD
   // Обработчики добавления
   const handleAddTask = async () => {
     const token = localStorage.getItem('access');
@@ -147,10 +175,39 @@ function TopNavbar({
     try {
       const resProject = await fetch(`http://localhost:8000/projects/`, {
         method: 'POST',
+=======
+  useEffect(() => {
+    if (isEditing && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [isEditing]);
+
+  const handleTitleDoubleClick = () => {
+    setIsEditing(true);
+    setInputValue(projectTitle);
+  };
+
+  const handleTitleChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleTitleBlur = async () => {
+    const newTitle = inputValue.trim();
+    setIsEditing(false);
+    if (!newTitle || newTitle === projectTitle) return;
+
+    const token = localStorage.getItem('access');
+    if (!token || !projectId) return;
+
+    try {
+      const res = await fetch(`http://localhost:8000/projects/${projectId}/`, {
+        method: 'PATCH',
+>>>>>>> ace2cd8 (финал 1)
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`
         },
+<<<<<<< HEAD
         body: JSON.stringify({ title: 'Новый проект' })
       });
       if (!resProject.ok) throw new Error();
@@ -187,6 +244,143 @@ function TopNavbar({
     if (!card) return;
     try {
       const res = await fetch(`http://localhost:8000/cards/${card.id}/columns/`, {
+=======
+        body: JSON.stringify({ title: newTitle })
+      });
+      if (!res.ok) throw new Error();
+      setProjectTitle(newTitle);
+      setBoardsByProject(prev => ({
+        ...prev,
+        [projectId]: {
+          ...prev[projectId],
+          title: newTitle
+        }
+      }));
+    } catch (err) {
+      console.error('Ошибка при обновлении названия проекта:', err);
+    }
+  };
+
+  const handleLogout = () => navigate('/');
+  const handleProfileSettings = () => navigate('/profile');
+  const toggleProfileMenu = () => setIsProfileMenuOpen(prev => !prev);
+  const closeComingSoon = () => setIsComingSoonOpen(false);
+
+  const handleAddTask = async () => {
+    const token = localStorage.getItem('access');
+    if (!token) return;
+    const match = location.pathname.match(/\/projects\/(\d+)\/boards\/(\d+)/);
+    const boardIndex = match ? parseInt(match[2]) : null;
+    const currentProjectId = match ? match[1] : null;
+    if (!currentProjectId || boardIndex === null) return;
+    const card = boardsByProject?.[currentProjectId]?.cards?.[boardIndex];
+    if (!card) return;
+    try {
+      const res = await fetch(`http://localhost:8000/cards/${card.id}/tasks/`, {
+>>>>>>> ace2cd8 (финал 1)
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+<<<<<<< HEAD
+        body: JSON.stringify({ title: 'Новая колонка' })
+=======
+        body: JSON.stringify({ title: 'Новая задача', description: '', priority: 'низкий' })
+>>>>>>> ace2cd8 (финал 1)
+      });
+      if (!res.ok) throw new Error();
+      await res.json();
+      refreshColumns?.();
+      setIsAddMenuOpen(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+<<<<<<< HEAD
+  // Профиль
+  const toggleProfileMenu = () => setIsProfileMenuOpen(prev => !prev);
+  const handleLogout = () => navigate('/');
+  const handleProfileSettings = () => navigate('/profile');
+  const openComingSoon = () => setIsComingSoonOpen(true);
+  const closeComingSoon = () => setIsComingSoonOpen(false);
+=======
+  const handleAddBoard = async () => {
+    const token = localStorage.getItem('access');
+    if (!token || !projectId) return;
+    try {
+      const res = await fetch(`http://localhost:8000/cards/projects/${projectId}/cards/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ title: 'Новая доска' })
+      });
+      if (!res.ok) throw new Error();
+      const newCard = await res.json();
+      setBoardsByProject(prev => ({
+        ...prev,
+        [projectId]: {
+          ...prev[projectId],
+          cards: [...(prev[projectId]?.cards || []), newCard]
+        }
+      }));
+      const newIndex = (boardsByProject[projectId]?.cards?.length || 0);
+      navigate(`/projects/${projectId}/boards/${newIndex}`);
+      setIsAddMenuOpen(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleAddProject = async () => {
+    const token = localStorage.getItem('access');
+    if (!token) return;
+    try {
+      const resProject = await fetch(`http://localhost:8000/projects/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify({ title: 'Новый проект' })
+      });
+      if (!resProject.ok) throw new Error();
+      const newProject = await resProject.json();
+      const newProjectId = newProject.id;
+
+      const resCards = await fetch(`http://localhost:8000/cards/projects/${newProjectId}/`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      const cards = await resCards.ok ? await resCards.json() : [];
+
+      setBoardsByProject(prev => ({
+        ...prev,
+        [newProjectId]: {
+          ...newProject,
+          cards: cards
+        }
+      }));
+
+      navigate(`/projects/${newProjectId}/boards/0`);
+      setIsAddMenuOpen(false);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleAddColumnToDB = async () => {
+    const token = localStorage.getItem('access');
+    if (!token) return;
+    const match = location.pathname.match(/\/boards\/(\d+)/);
+    const boardIndex = match ? parseInt(match[1]) : null;
+    if (!projectId || boardIndex === null) return;
+    const card = boardsByProject?.[projectId]?.cards?.[boardIndex];
+    if (!card) return;
+    try {
+      const res = await fetch(`http://localhost:8000/cards/${card.id}/columns/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -202,17 +396,12 @@ function TopNavbar({
       console.error(err);
     }
   };
-
-  // Профиль
-  const toggleProfileMenu = () => setIsProfileMenuOpen(prev => !prev);
-  const handleLogout = () => navigate('/');
-  const handleProfileSettings = () => navigate('/profile');
-  const openComingSoon = () => setIsComingSoonOpen(true);
-  const closeComingSoon = () => setIsComingSoonOpen(false);
+>>>>>>> ace2cd8 (финал 1)
 
   return (
     <header className="top-navbar">
       <div className="project-name">
+<<<<<<< HEAD
         {!isSidebarOpen && (
           <>
             <div className="project-logo" onClick={toggleSidebar}>
@@ -222,6 +411,30 @@ function TopNavbar({
             </div>
             <div className="project-name-text">{projectTitle}</div>
           </>
+=======
+        <div className="project-logo" onClick={toggleSidebar}>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        {isEditing ? (
+          <input
+            ref={inputRef}
+            className="project-name-input"
+            value={inputValue}
+            onChange={handleTitleChange}
+            onBlur={handleTitleBlur}
+            onKeyDown={(e) => e.key === 'Enter' && inputRef.current.blur()}
+          />
+        ) : (
+          <div
+            className="project-name-text"
+            onDoubleClick={handleTitleDoubleClick}
+            title="Двойной клик для переименования"
+          >
+            {projectTitle}
+          </div>
+>>>>>>> ace2cd8 (финал 1)
         )}
       </div>
 
@@ -235,8 +448,12 @@ function TopNavbar({
                 navigate(`/projects/${projectId}/boards/${boardIndex}`);
               }}
             >
+<<<<<<< HEAD
               <img src={boardsIcon} alt="Доски" className="nav-icon" />
               ДОСКИ
+=======
+              <img src={boardsIcon} alt="Доски" className="nav-icon" /> ДОСКИ
+>>>>>>> ace2cd8 (финал 1)
             </button>
 
             <button
@@ -247,8 +464,12 @@ function TopNavbar({
                 navigate(`/projects/${projectId}/list`);
               }}
             >
+<<<<<<< HEAD
               <img src={listIcon} alt="Список" className="nav-icon" />
               СПИСОК
+=======
+              <img src={listIcon} alt="Список" className="nav-icon" /> СПИСОК
+>>>>>>> ace2cd8 (финал 1)
             </button>
 
             <button
@@ -258,8 +479,12 @@ function TopNavbar({
                 navigate(`/projects/${projectId}/boards/${boardIndex}/reports`);
               }}
             >
+<<<<<<< HEAD
               <img src={reportsIcon} alt="Отчёты" className="nav-icon" />
               ОТЧЕТЫ
+=======
+              <img src={reportsIcon} alt="Отчёты" className="nav-icon" /> ОТЧЕТЫ
+>>>>>>> ace2cd8 (финал 1)
             </button>
 
             {!hideAddButton && (
@@ -268,8 +493,12 @@ function TopNavbar({
                 className="nav-btn add-main"
                 onClick={() => setIsAddMenuOpen(prev => !prev)}
               >
+<<<<<<< HEAD
                 <img src={appendIcon} alt="Добавить" className="nav-icon" />
                 ДОБАВИТЬ
+=======
+                <img src={appendIcon} alt="Добавить" className="nav-icon" /> ДОБАВИТЬ
+>>>>>>> ace2cd8 (финал 1)
               </button>
             )}
           </div>
@@ -281,6 +510,7 @@ function TopNavbar({
           className="topnav-dropdown"
           style={{ top: dropdownPos.top + 6, left: dropdownPos.left }}
         >
+<<<<<<< HEAD
           <button onClick={handleAddBoard}>
             <img src={boardsIcon} alt="Доска" /> ДОСКА
           </button>
@@ -293,6 +523,12 @@ function TopNavbar({
           <button onClick={handleAddColumnToDB}>
             <img src={columnIcon} alt="Колонка" /> КОЛОНКА
           </button>
+=======
+          <button onClick={handleAddBoard}><img src={boardsIcon} alt="Доска" /> ДОСКА</button>
+          <button onClick={handleAddTask}><img src={cardIcon} alt="Карточка" /> КАРТОЧКА</button>
+          <button onClick={handleAddProject}><img src={letterpIcon} alt="Проект" /> ПРОЕКТ</button>
+          <button onClick={handleAddColumnToDB}><img src={columnIcon} alt="Колонка" /> КОЛОНКА</button>
+>>>>>>> ace2cd8 (финал 1)
         </div>
       )}
 
@@ -309,12 +545,17 @@ function TopNavbar({
             <img src={avatarIcon} alt="Аватар" className="profile-menu-avatar" />
             <div className="profile-menu-name">{userInfo.fullName || 'Без имени'}</div>
             <div className="profile-menu-username">{userInfo.email || 'Нет email'}</div>
+<<<<<<< HEAD
             <button className="profile-menu-btn" onClick={handleProfileSettings}>
               НАСТРОЙКИ ПРОФИЛЯ
             </button>
             <button className="profile-menu-exit" onClick={handleLogout}>
               ВЫХОД
             </button>
+=======
+            <button className="profile-menu-btn" onClick={handleProfileSettings}>НАСТРОЙКИ ПРОФИЛЯ</button>
+            <button className="profile-menu-exit" onClick={handleLogout}>ВЫХОД</button>
+>>>>>>> ace2cd8 (финал 1)
             <div className="profile-menu-treker">TREKER</div>
           </div>
         )}

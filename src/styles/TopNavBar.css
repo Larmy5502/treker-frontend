@@ -15,21 +15,62 @@
 }
 
 .top-nav-wrapper {
+<<<<<<< HEAD
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+=======
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-left: auto;
+>>>>>>> ace2cd8 (финал 1)
 }
 
 .project-name {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-weight: 900;
+  height: 40px;
+  flex-shrink: 0;
+  max-width: 300px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.project-name-text,
+.project-name-input {
   font-size: 18px;
+  font-weight: 900;
   color: #2b3b4e;
   text-transform: uppercase;
+  font-family: inherit;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-name-input {
+  background: transparent;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.project-name-input:focus,
+.project-name-input:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .custom-filter-btn {
@@ -69,6 +110,7 @@
   border: 1px solid #4A6392;
   border-radius: 5px;
   overflow: hidden;
+  margin: 0px 660px 0px 0px;
 }
 
 .nav-btn {

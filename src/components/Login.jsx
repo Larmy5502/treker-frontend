@@ -11,20 +11,28 @@ function Login() {
 
   const handleLogin = async () => {
     if (!email || !password) {
-      setError('Введите почту и пароль')
-      return
+      setError('Введите почту и пароль');
+      return;
     }
 
     try {
+<<<<<<< HEAD
       setLoading(true)
       setError('')
 
+=======
+      setLoading(true);
+      setError('');
+
+      // 🔐 Запрос на логин
+>>>>>>> ace2cd8 (финал 1)
       const response = await fetch('http://localhost:8000/auth/jwt/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
+<<<<<<< HEAD
       })
 
       const data = await response.json()
@@ -44,6 +52,65 @@ function Login() {
       setLoading(false)
     }
   }
+=======
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || 'Ошибка входа');
+      }
+
+      // 💾 Сохраняем токены
+      localStorage.setItem('access', data.access);
+      localStorage.setItem('refresh', data.refresh);
+
+      // 📦 Получаем проекты пользователя
+      const projectsRes = await fetch('http://localhost:8000/projects/', {
+        headers: {
+          Authorization: `Bearer ${data.access}`,
+        },
+      });
+
+      if (!projectsRes.ok) {
+        throw new Error('Ошибка получения проектов');
+      }
+
+      const projects = await projectsRes.json();
+
+      if (!projects.length) {
+        throw new Error('Нет доступных проектов');
+      }
+
+      const firstProjectId = projects[0].id;
+
+      // 📦 Получаем доски (cards) проекта
+      const cardsRes = await fetch(`http://localhost:8000/cards/projects/${firstProjectId}/cards/`, {
+        headers: {
+          Authorization: `Bearer ${data.access}`,
+        },
+      });
+
+      if (!cardsRes.ok) {
+        throw new Error('Ошибка получения досок проекта');
+      }
+
+      const cards = await cardsRes.json();
+
+      if (!cards.length) {
+        throw new Error('В проекте нет досок');
+      }
+
+      // ✅ Переход на первую доску
+      navigate(`/projects/${firstProjectId}/boards/0`);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+>>>>>>> ace2cd8 (финал 1)
 
   return (
     <div className="login-wrapper">

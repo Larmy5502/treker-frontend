@@ -2,6 +2,10 @@ import { useState, useEffect, useRef } from 'react';
 import TaskCard from './TaskCard';
 import { Droppable } from '@hello-pangea/dnd';
 import ColumnMenu from './ColumnMenu';
+<<<<<<< HEAD
+=======
+import '../styles/BoardSection.css';
+>>>>>>> ace2cd8 (финал 1)
 
 function BoardSection({
   columnId,
@@ -65,10 +69,23 @@ function BoardSection({
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}
             autoFocus
+<<<<<<< HEAD
             className="column-title-input"
           />
         ) : (
           <span onDoubleClick={() => setIsEditing(true)}>{title}</span>
+=======
+            maxLength={18}
+            className="column-title-clean-input"
+          />
+        ) : (
+          <span
+            onDoubleClick={() => setIsEditing(true)}
+            style={{ userSelect: 'none', cursor: 'pointer' }}
+          >
+            {title}
+          </span>
+>>>>>>> ace2cd8 (финал 1)
         )}
         <div style={{ position: 'relative' }}>
           <button

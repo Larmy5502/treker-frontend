@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .board-columns {
   display: flex;
   justify-content: center; 
@@ -52,16 +53,27 @@
   padding: 2px 8px;
   border-radius: 6px;
   font-size: 12px;
+=======
+.column-title-clean-input {
+  font-size: 22px;
+>>>>>>> ace2cd8 (финал 1)
   font-weight: 700;
   color: #2b3b4e;
-}
-
-.board-section-header {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+  line-height: 1.2;
+  height: 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  user-select: none;
 }
 
+<<<<<<< HEAD
 .board-section-header h3 {
   font-size: 16px;
   font-weight: 900;
@@ -111,3 +123,5 @@
   align-items: center;
   gap: 8px;
 }
+=======
+>>>>>>> ace2cd8 (финал 1)
