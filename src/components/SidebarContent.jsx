@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-// SidebarContent.jsx
-=======
->>>>>>> ace2cd8 (финал 1)
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { FaSearch } from 'react-icons/fa';
@@ -57,10 +53,7 @@ function SidebarContent({ isSidebarOpen, toggleSidebar, boardsByProject }) {
                   className="task-item"
                   onClick={() => toggleSidebar(false)}
                 >
-<<<<<<< HEAD
-=======
                   {/* 👈 Закрываем сайдбар при клике по доске */}
->>>>>>> ace2cd8 (финал 1)
                   {name}
                 </Link>
               );
@@ -76,13 +69,9 @@ function SidebarContent({ isSidebarOpen, toggleSidebar, boardsByProject }) {
       <div className="sidebar-header">
         <span className="sidebar-title">TREKER</span>
         {isSidebarOpen && (
-<<<<<<< HEAD
-          <button className="collapse-button" onClick={toggleSidebar}>«</button>
-=======
           <button className="collapse-button" onClick={() => toggleSidebar(false)}>
             «
           </button>
->>>>>>> ace2cd8 (финал 1)
         )}
       </div>
 
@@ -94,15 +83,9 @@ function SidebarContent({ isSidebarOpen, toggleSidebar, boardsByProject }) {
           </div>
 
           <div className="sidebar-projects">
-<<<<<<< HEAD
-            {Object.keys(boardsByProject).sort((a, b) => Number(a) - Number(b)).map((id) =>
-              renderBoardLinks(id)
-            )}
-=======
             {Object.keys(boardsByProject)
               .sort((a, b) => Number(a) - Number(b))
               .map((id) => renderBoardLinks(id))}
->>>>>>> ace2cd8 (финал 1)
           </div>
         </>
       )}
