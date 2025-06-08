@@ -1,24 +1,15 @@
 .reports-container {
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  gap: 60px; 
-=======
   gap: 60px;
->>>>>>> ace2cd8 (финал 1)
   padding: 60px 20px;
   background-color: #e6f2fd;
   min-height: 100vh;
 }
 
 .report-card {
-<<<<<<< HEAD
-  width: 380px; 
-  height: 460px; 
-=======
   width: 380px;
   height: 460px;
->>>>>>> ace2cd8 (финал 1)
   background-color: white;
   border: 1px solid #6c8cab;
   border-radius: 16px;
@@ -69,10 +60,7 @@
   font-size: 15px;
   color: #344b68;
 }
-<<<<<<< HEAD
-=======
 
 .main-content {
   padding: 0px;
 }
->>>>>>> ace2cd8 (финал 1)

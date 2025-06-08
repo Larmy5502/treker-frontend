@@ -60,18 +60,6 @@
 }
 
 .column-menu .card-menu__item.no-hover {
-<<<<<<< HEAD
-  flex-direction: column !important; 
-  align-items: flex-start !important; 
-  gap: 4px;
-  padding-left: 16px; 
-}
-
-.column-menu .card-menu__submenu {
-  flex-direction: row !important; 
-  gap: 8px;
-  width: auto; 
-=======
   flex-direction: column !important; /* теперь вертикально */
   align-items: flex-start !important; /* текст слева */
   gap: 4px;
@@ -82,7 +70,6 @@
   flex-direction: row !important; /* стрелки горизонтально */
   gap: 8px;
   width: auto; /* чтобы не сжимать */
->>>>>>> ace2cd8 (финал 1)
   padding: 0;
   justify-content: flex-start;
 }

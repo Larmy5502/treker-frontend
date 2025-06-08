@@ -15,18 +15,10 @@
 }
 
 .top-nav-wrapper {
-<<<<<<< HEAD
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-=======
   display: flex;
   align-items: center;
   position: relative;
   margin-left: auto;
->>>>>>> ace2cd8 (финал 1)
 }
 
 .project-name {

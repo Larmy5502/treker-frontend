@@ -66,10 +66,16 @@ function BoardSection({
             onBlur={handleBlur}
             onKeyDown={handleKeyDown}
             autoFocus
-            className="column-title-input"
+            maxLength={18}
+            className="column-title-clean-input"
           />
         ) : (
-          <span onDoubleClick={() => setIsEditing(true)}>{title}</span>
+          <span
+            onDoubleClick={() => setIsEditing(true)}
+            style={{ userSelect: 'none', cursor: 'pointer' }}
+          >
+            {title}
+          </span>
         )}
         <div style={{ position: 'relative' }}>
           <button

@@ -9,16 +9,9 @@
   box-sizing: border-box;
   position: relative;
   word-wrap: break-word;
-<<<<<<< HEAD
-  height: auto; 
-  min-height: 120px;
-  height: auto;
-  overflow: visible; 
-=======
   height: auto;
   min-height: 120px;
   overflow: visible;
->>>>>>> ace2cd8 (финал 1)
 }
 
 .task-card-header {
@@ -32,11 +25,7 @@
   white-space: normal;
   overflow-wrap: break-word;
   word-break: break-word;
-<<<<<<< HEAD
-  max-height: calc(1.2em * 16); 
-=======
   max-height: calc(1.2em * 16);
->>>>>>> ace2cd8 (финал 1)
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 16;
@@ -67,15 +56,10 @@
 
 .task-card-bottom {
   display: flex;
-<<<<<<< HEAD
-  align-items: center;
-  margin-top: 0;
-=======
   flex-direction: column;
   align-items: flex-start;
   margin-top: 0;
   gap: 6px;
->>>>>>> ace2cd8 (финал 1)
 }
 
 .task-user-avatar {
@@ -84,21 +68,6 @@
   border-radius: 50%;
 }
 
-<<<<<<< HEAD
-.task-card.low {
-  border-left: 6px solid #2d6a4f;
-  background-color: #e6f4ea;
-}
-
-.task-card.medium {
-  border-left: 6px solid #d4a900;
-  background-color: #fffbe6;
-}
-
-.task-card.high {
-  border-left: 6px solid #c1121f;
-  background-color: #fde2e1;
-=======
 .task-priority-tag {
   font-family: 'Mulish', sans-serif;
   font-size: 14px;
@@ -120,5 +89,4 @@
   align-items: flex-start;
   gap: 6px;
   font-family: 'Mulish', sans-serif;
->>>>>>> ace2cd8 (финал 1)
 }
