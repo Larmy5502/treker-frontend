@@ -6,10 +6,7 @@ import SidebarContent from './SidebarContent';
 import BoardSection from './BoardSection';
 import { useParams } from 'react-router-dom';
 import EditTaskModal from './EditTaskModal';
-<<<<<<< HEAD
-=======
 import TaskNameModal from './TaskNameModal';
->>>>>>> ace2cd8 (финал 1)
 
 function ProjectBoard() {
   const { projectId, boardIndex } = useParams();
@@ -22,15 +19,11 @@ function ProjectBoard() {
   const [selectedTask, setSelectedTask] = useState(null);
   const [selectedColumnId, setSelectedColumnId] = useState('');
   const [currentBoardTitle, setCurrentBoardTitle] = useState('');
-<<<<<<< HEAD
-
-=======
   const [isTaskNameModalOpen, setIsTaskNameModalOpen] = useState(false);
 
   const [isEditingBoardTitle, setIsEditingBoardTitle] = useState(false);
   const [boardTitleInput, setBoardTitleInput] = useState('');
 
->>>>>>> ace2cd8 (финал 1)
   const fetchProjects = async () => {
     const token = localStorage.getItem('access');
     if (!token) return;
@@ -63,11 +56,7 @@ function ProjectBoard() {
 
         const loadedColumns = {};
         card.columns.forEach(column => {
-<<<<<<< HEAD
-          loadedColumns[column.id] = { title: column.title, tasks: [] };
-=======
           loadedColumns[column.id] = { title: column.title, order: column.order, tasks: [] };
->>>>>>> ace2cd8 (финал 1)
         });
 
         tasks.forEach(task => {
@@ -91,8 +80,6 @@ function ProjectBoard() {
     fetchProjects();
   }, [projectId, boardIndex]);
 
-<<<<<<< HEAD
-=======
   const handleBoardTitleDoubleClick = () => {
     setIsEditingBoardTitle(true);
     setBoardTitleInput(currentBoardTitle);
@@ -125,7 +112,6 @@ function ProjectBoard() {
     }
   };
 
->>>>>>> ace2cd8 (финал 1)
   const columns = allBoardsData[uniqueBoardKey] || {};
 
   const setColumnsForBoard = newColumns => {
@@ -135,13 +121,6 @@ function ProjectBoard() {
     }));
   };
 
-<<<<<<< HEAD
-  const handleAddTask = () => {
-    const newId = taskIdCounter;
-    const newTask = {
-      id: newId.toString(),
-      title: 'Новая задача',
-=======
   const handleAddTaskClick = () => {
     setIsTaskNameModalOpen(true);
   };
@@ -151,16 +130,11 @@ function ProjectBoard() {
     const newTask = {
       id: newId.toString(),
       title: taskTitle,
->>>>>>> ace2cd8 (финал 1)
       description: '',
       author: 'IvanIvanov',
       performer: '',
       tags: [],
-<<<<<<< HEAD
-      priority: 'низкий',
-=======
       priority: 'low',
->>>>>>> ace2cd8 (финал 1)
       deadline: '',
       type: '',
       columnId: Object.keys(columns)[0] || 'doing',
@@ -168,10 +142,7 @@ function ProjectBoard() {
     };
 
     setTaskIdCounter(prev => prev + 1);
-<<<<<<< HEAD
-=======
     setIsTaskNameModalOpen(false);
->>>>>>> ace2cd8 (финал 1)
 
     const firstKey = newTask.columnId;
     setColumnsForBoard({
@@ -183,20 +154,6 @@ function ProjectBoard() {
     });
   };
 
-<<<<<<< HEAD
-  const handleRenameColumn = (columnId, newTitle) => {
-    const updatedColumns = {
-      ...columns,
-      [columnId]: {
-        ...columns[columnId],
-        title: newTitle,
-      },
-    };
-    setColumnsForBoard(updatedColumns);
-  };
-
-=======
->>>>>>> ace2cd8 (финал 1)
   const handleOpenModal = (task, columnId) => {
     setSelectedTask({ ...task, columnTitle: columns[columnId].title });
     setSelectedColumnId(columnId);
@@ -216,8 +173,6 @@ function ProjectBoard() {
     setColumnsForBoard(updatedColumns);
   };
 
-<<<<<<< HEAD
-=======
   const handleRenameColumn = async (columnId, newTitle = null) => {
     const token = localStorage.getItem('access');
     if (!token) return;
@@ -276,7 +231,6 @@ function ProjectBoard() {
     }
   };
 
->>>>>>> ace2cd8 (финал 1)
   const onDragEnd = async result => {
     const { source, destination } = result;
     if (!destination) return;
@@ -320,13 +274,7 @@ function ProjectBoard() {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
           },
-<<<<<<< HEAD
-          body: JSON.stringify({
-            column_id: destination.droppableId,
-          }),
-=======
           body: JSON.stringify({ column_id: destination.droppableId }),
->>>>>>> ace2cd8 (финал 1)
         });
       } catch (err) {
         console.error('Ошибка при обновлении колонки задачи:', err);
@@ -334,15 +282,10 @@ function ProjectBoard() {
     }
   };
 
-<<<<<<< HEAD
-  const handleMoveColumn = (columnId, direction) => {
-    const columnEntries = Object.entries(columns);
-=======
   const handleMoveColumn = async (columnId, direction) => {
     const columnEntries = Object.entries(columns).sort(
       ([, a], [, b]) => (a.order ?? 0) - (b.order ?? 0)
     );
->>>>>>> ace2cd8 (финал 1)
     const index = columnEntries.findIndex(([key]) => key === columnId);
     if (index === -1) return;
 
@@ -372,13 +315,6 @@ function ProjectBoard() {
     newOrder.splice(newIndex, 0, moved);
 
     const newColumns = {};
-<<<<<<< HEAD
-    newOrder.forEach(([key, value]) => {
-      newColumns[key] = value;
-    });
-
-    setColumnsForBoard(newColumns);
-=======
     newOrder.forEach(([key, value], i) => {
       newColumns[key] = {
         ...value,
@@ -412,7 +348,6 @@ function ProjectBoard() {
     } catch (err) {
       console.error('Ошибка при обновлении порядка колонок:', err);
     }
->>>>>>> ace2cd8 (финал 1)
   };
 
 
@@ -450,10 +385,6 @@ function ProjectBoard() {
                   }}
                 >
                   <div className="board-top">
-<<<<<<< HEAD
-                    <h3 className="board-title">{currentBoardTitle}</h3>
-                    <button className="board-add-btn" onClick={handleAddTask}>
-=======
                     {isEditingBoardTitle ? (
                       <input
                         className="board-title-input"
@@ -472,14 +403,12 @@ function ProjectBoard() {
                       </h3>
                     )}
                     <button className="board-add-btn" onClick={handleAddTaskClick}>
->>>>>>> ace2cd8 (финал 1)
                       ＋
                     </button>
                   </div>
 
                   <DragDropContext onDragEnd={onDragEnd}>
                     <div className="board-columns">
-<<<<<<< HEAD
                       {Object.entries(columns).map(([key, column]) => (
                         <BoardSection
                           key={key}
@@ -492,7 +421,6 @@ function ProjectBoard() {
                           onDeleteColumn={() => {}}
                         />
                       ))}
-=======
                       {Object.entries(columns)
                         .sort(([, a], [, b]) => (a.order ?? 0) - (b.order ?? 0))
                         .map(([key, column]) => (
@@ -507,7 +435,6 @@ function ProjectBoard() {
                             onDeleteColumn={() => handleDeleteColumn(key)}
                           />
                         ))}
->>>>>>> ace2cd8 (финал 1)
                     </div>
                   </DragDropContext>
                 </div>
@@ -519,8 +446,6 @@ function ProjectBoard() {
         <div className="right-strip"></div>
       </div>
 
-<<<<<<< HEAD
-=======
       {isTaskNameModalOpen && (
         <TaskNameModal
           onConfirm={handleConfirmNewTask}
@@ -528,7 +453,6 @@ function ProjectBoard() {
         />
       )}
 
->>>>>>> ace2cd8 (финал 1)
       {selectedTask && (
         <EditTaskModal
           task={selectedTask}

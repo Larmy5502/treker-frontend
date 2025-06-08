@@ -8,8 +8,30 @@ function EditTaskModal({ task, onClose, onSave }) {
   const [commentText, setCommentText] = useState('');
   const titleRef = useRef(null);
 
-  const [taskTypes, setTaskTypes] = useState([]);
-  const titleRef = useRef(null);
+  useEffect(() => {
+    const cachedTypes = localStorage.getItem('taskTypes');
+    if (cachedTypes) {
+      setTaskTypes(JSON.parse(cachedTypes));
+      return;
+    }
+
+    const token = localStorage.getItem('access');
+    if (!token) return;
+
+    fetch('http://localhost:8000/tasks/task-types/', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
+      .then(res => res.json())
+      .then(data => {
+        setTaskTypes(data);
+        localStorage.setItem('taskTypes', JSON.stringify(data));
+      })
+      .catch(err => console.error('Ошибка при загрузке типов задач:', err));
+  }, []);
+
+
   useEffect(() => {
     onSave(taskData);
   }, [taskData]);
@@ -105,7 +127,6 @@ function EditTaskModal({ task, onClose, onSave }) {
                 <div className="task-info-value badge">
                   <img src={avatarIcon} alt="Автор" className="badge-avatar" />
                   {taskData.author}
-=======
                   {taskData.creator
                     ? `${taskData.creator.first_name} ${taskData.creator.last_name}`
                     : '—'}
