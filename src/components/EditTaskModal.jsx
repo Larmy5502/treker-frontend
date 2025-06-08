@@ -6,39 +6,10 @@ import descriptionIcon from '../assets/description.png';
 function EditTaskModal({ task, onClose, onSave }) {
   const [taskData, setTaskData] = useState({ ...task });
   const [commentText, setCommentText] = useState('');
-<<<<<<< HEAD
   const titleRef = useRef(null);
 
-=======
   const [taskTypes, setTaskTypes] = useState([]);
   const titleRef = useRef(null);
-
-
-  useEffect(() => {
-    const cachedTypes = localStorage.getItem('taskTypes');
-    if (cachedTypes) {
-      setTaskTypes(JSON.parse(cachedTypes));
-      return;
-    }
-
-    const token = localStorage.getItem('access');
-    if (!token) return;
-
-    fetch('http://localhost:8000/tasks/task-types/', {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
-      .then(res => res.json())
-      .then(data => {
-        setTaskTypes(data);
-        localStorage.setItem('taskTypes', JSON.stringify(data));
-      })
-      .catch(err => console.error('Ошибка при загрузке типов задач:', err));
-  }, []);
-
-
->>>>>>> ace2cd8 (финал 1)
   useEffect(() => {
     onSave(taskData);
   }, [taskData]);
@@ -62,52 +33,10 @@ function EditTaskModal({ task, onClose, onSave }) {
     }
   };
 
-<<<<<<< HEAD
   const handleChange = (field, value) => {
     setTaskData(prev => ({ ...prev, [field]: value }));
   };
 
-=======
-  const handleChange = async (field, value) => {
-    const updated = { ...taskData, [field]: value };
-    setTaskData(updated);
-
-    // Поля, которые нужно синхронизировать с бэком при изменении
-    const fieldsToSync = ['type', 'description', 'priority', 'deadline'];
-
-    if (fieldsToSync.includes(field)) {
-      const token = localStorage.getItem('access');
-      if (!token) return;
-
-      const payload = {
-        title: updated.title,
-        description: updated.description,
-        priority: updated.priority,
-        type: updated.type,
-        column: updated.columnId,
-        performer: updated.performer || null,
-        project: updated.project,
-        board: updated.board
-      };
-
-      try {
-        await fetch(`http://localhost:8000/tasks/tasks/${updated.id}/`, {
-          method: 'PUT',
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`
-          },
-          body: JSON.stringify(payload)
-        });
-      } catch (err) {
-        console.error('Ошибка при обновлении задачи:', err);
-      }
-    }
-  };
-
-
-
->>>>>>> ace2cd8 (финал 1)
   const handleAttachment = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -164,18 +93,10 @@ function EditTaskModal({ task, onClose, onSave }) {
                     value={taskData.type}
                     onChange={(e) => handleChange('type', e.target.value)}
                   >
-<<<<<<< HEAD
                     <option value="">—</option>
                     <option value="Bug">Ошибка</option>
                     <option value="Feature">Функциональность</option>
                     <option value="Task">Задача</option>
-=======
-                    {taskTypes.map((type) => (
-                      <option key={type.id} value={type.id}>
-                        {type.name}
-                      </option>
-                    ))}
->>>>>>> ace2cd8 (финал 1)
                   </select>
                 </div>
               </div>
@@ -183,13 +104,11 @@ function EditTaskModal({ task, onClose, onSave }) {
                 <div className="task-info-label">Автор:</div>
                 <div className="task-info-value badge">
                   <img src={avatarIcon} alt="Автор" className="badge-avatar" />
-<<<<<<< HEAD
                   {taskData.author}
 =======
                   {taskData.creator
                     ? `${taskData.creator.first_name} ${taskData.creator.last_name}`
                     : '—'}
->>>>>>> ace2cd8 (финал 1)
                 </div>
               </div>
               <div className="task-info-row">
