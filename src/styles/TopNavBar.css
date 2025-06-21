@@ -18,7 +18,12 @@
   display: flex;
   align-items: center;
   position: relative;
+<<<<<<< HEAD
   margin-left: auto;
+=======
+  margin-left: -100px;
+  gap: 110px;
+>>>>>>> 043711b (финал)
 }
 
 .project-name {
@@ -27,7 +32,11 @@
   gap: 12px;
   height: 40px;
   flex-shrink: 0;
+<<<<<<< HEAD
   max-width: 300px;
+=======
+  width: 300px;
+>>>>>>> 043711b (финал)
   overflow: hidden;
   user-select: none;
 }
@@ -38,14 +47,26 @@
   font-weight: 900;
   color: #2b3b4e;
   text-transform: uppercase;
+<<<<<<< HEAD
   font-family: inherit;
   line-height: 1;
+=======
+  font-family: inherit;  
+>>>>>>> 043711b (финал)
   padding: 0;
   margin: 0;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+<<<<<<< HEAD
+=======
+  -webkit-spellcheck: false;
+
+  text-decoration: none;
+  -webkit-text-decoration-skip: none;
+  text-decoration-skip: none;
+>>>>>>> 043711b (финал)
 }
 
 .project-name-input {
@@ -80,6 +101,30 @@
   cursor: pointer;
 }
 
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #C4D9EB;
+  border: 2px solid #4A6392;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2b3b4e;
+  cursor: pointer;
+  height: 42px;
+  margin: 0px 0px 0px 0p; /* ← аккуратный отступ от группы */
+}
+
+
+.filter-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 .project-logo {
   display: flex;
   flex-direction: column;
@@ -99,16 +144,19 @@
   width: 446px;
   height: 41px;
   background-color: #C4D9EB;
-  border: 1px solid #4A6392;
+  border: 2px solid #4A6392;
   border-radius: 5px;
   overflow: hidden;
+<<<<<<< HEAD
   margin: 0px 660px 0px 0px;
+=======
+  margin: 0px 0px 0px 0px;
+>>>>>>> 043711b (финал)
 }
 
 .nav-btn {
   flex: 1;
   background-color: #C4D9EB;
-  border: none;
   outline: none;
   font-size: 14px;
   font-weight: 700;
@@ -120,12 +168,34 @@
   justify-content: center;
   gap: 8px;
   transition: transform 0.1s ease;
-  border-radius: 0;
+  border: none;
+  border-left: 1px solid #4A6392;
+  font-family: 'Mulish', sans-serif;
 }
 
 .nav-btn img.nav-icon {
   width: 20px;
   height: 20px;
+}
+
+.nav-icon_icon-boards {
+  width: 20px;
+  height: 26px;
+}
+
+.nav-icon_icon-list {
+  width: 24px;
+  height: 20px;
+}
+
+.nav-icon_icon-reports {
+  width: 22px;
+  height: 22px;
+}
+
+.nav-icon_icon-add {
+  width: 27px;
+  height: 27px;
 }
 
 .nav-btn:not(:last-child) {
@@ -143,8 +213,11 @@
 .nav-btn.active {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
+=======
+>>>>>>> 043711b (финал)
   font-weight: bold;
   transform: translateY(-1px);
 }
@@ -194,7 +267,6 @@
 .profile-icon img {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
 }
 
 .icon-small {
@@ -385,6 +457,7 @@
 }
 
 .topnav-dropdown button {
+<<<<<<< HEAD
   background: none;
   border: none;
   color: #2b3b4e;
@@ -401,6 +474,31 @@
 
 .topnav-dropdown button:hover {
   background-color: #b5cadf;
+=======
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Mulish', sans-serif;
+  color: #2b3b4e;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.topnav-dropdown button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.topnav-dropdown button:hover {
+  background-color: #b8cde5;
+>>>>>>> 043711b (финал)
 }
 
 .topnav-dropdown img {
@@ -411,18 +509,28 @@
 
 .nav-btn.add-main {
   background-color: #C4D9EB;
+<<<<<<< HEAD
   border: none;
   border-radius: 0;
   font-size: 14px;
   font-weight: 600;
   color: #2b3b4e;
   padding: 6px 12px;
+=======
+  font-size: 14px;
+  font-weight: 600;
+  color: #2b3b4e;
+>>>>>>> 043711b (финал)
   display: flex;
   align-items: center;
   gap: 6px;
   transition: background-color 0.2s ease;
   outline: none;
   box-shadow: none;
+<<<<<<< HEAD
+=======
+  font-family: 'Mulish', sans-serif;
+>>>>>>> 043711b (финал)
 }
 
 .topnav-dropdown .nav-btn {
@@ -434,3 +542,108 @@
   border: none;
   font-weight: 600;
 }
+<<<<<<< HEAD
+=======
+
+.filter-wrapper {
+  position: relative;
+  margin-left: 12px; /* отступ от кнопок */
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #C4D9EB;
+  border: 2px solid #4A6392;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #2b3b4e;
+  cursor: pointer;
+  height: 42px;
+  transition: background-color 0.2s ease;
+  margin-top: -1px;
+}
+
+.filter-btn.open {
+  background-color: white;
+}
+
+.topnav-dropdown {
+  position: absolute;
+  background-color: #C4D9EB;
+  border: 2px solid #4A6392;
+  top: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 170px;
+  padding: 4px 0;
+  z-index: 2000;
+  margin: 0px 0px 0px 960px;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2b3b4e;
+  cursor: default;
+}
+
+.filter-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-option-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 8px 12px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color:#2b3b4e;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.filter-option-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filter-option-btn.last {
+  border-bottom: 0px solid #4A6392;
+}
+
+.filter-options li {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.invite-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 0%;
+  transition: transform 0.2s;
+  color: #2b3b4e;
+}
+>>>>>>> 043711b (финал)

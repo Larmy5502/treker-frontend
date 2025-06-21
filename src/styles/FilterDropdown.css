@@ -1,0 +1,131 @@
+.filter-dropdown {
+  position: absolute;
+  background-color: #C4D9EB;
+  border: 2px solid #4A6392;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  width: 150px;
+  z-index: 1000;
+  margin-top: 5px;
+  margin-left: 0px;
+}
+
+.filter-options {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-option-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1.4px solid #4A6392;
+  padding: 8px 12px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  color: #2b3b4e;
+  text-align: left;
+  transition: background 0.2s ease;
+}
+
+.filter-option-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.filter-modal {
+  background-color: #C4D9EB;
+  color: #4A6392;
+  padding: 24px;
+  border-radius: 10px;
+  border: 2px solid #4A6392;
+  width: 280px;
+  font-family: 'Mulish', sans-serif;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1050;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: -10px;
+  margin-right: -10px;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #4A6392;
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filter-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  color: #4A6392;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 8px 0px;
+  font-size: 14px;
+  border: 2px solid #4A6392;
+  border-radius: 4px;
+  background-color: transparent;
+  color: #2b3b4e;
+  outline: none;
+  margin-bottom: 24px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.apply-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background: #4A6392;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform 0.1s ease, background 0.3s;
+}
+
+.apply-btn:hover {
+  background: #39507a;
+  transform: scale(1.04);
+}
+
+.apply-btn:active {
+  transform: scale(0.97);
+  background: #2e4569;
+}

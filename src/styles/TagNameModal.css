@@ -1,0 +1,165 @@
+.tagname-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.tagname-content {
+  background-color: #C4D9EB;
+  color: #4A6392;
+  padding: 24px;
+  border-radius: 10px;
+  border: 2px solid #4A6392;
+  width: 280px;
+  font-family: 'Mulish', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tagname-input {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #2b3b4e;
+  margin-bottom: 10px;
+}
+
+.tagname-suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tagname-suggestion-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tagname-suggestion-btn {
+  flex-grow: 1;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #fff;
+  color: #2b3b4e;
+  border: 1px solid #4a6392;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.tagname-suggestion-btn[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.tagname-remove-btn {
+  margin-left: 10px;
+  font-size: 18px;
+  color: red;
+  cursor: pointer;
+}
+
+.tagname-autocomplete {
+  position: absolute;
+  background-color: #c4d9eb;
+  border: 2px solid #4A6392; 
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1001;
+  font-family: 'Mulish', sans-serif;
+  padding: 6px;
+  margin-left: -7px;
+}
+
+.tagname-autocomplete-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #4a6392;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #2b3b4e;
+  margin-bottom: 6px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tagname-autocomplete-item:hover {
+  padding-right: 32px; /* расширение справа */
+}
+
+.tagname-autocomplete-item:hover .tagname-remove-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.tagname-suggestion-btn {
+  background: transparent;
+  border: none;
+  font-size: inherit;
+  text-align: left;
+  flex-grow: 1;
+  cursor: pointer;
+  color: inherit;
+  font-family: 'Mulish', sans-serif;
+  color: #2b3b4e;
+  font-size: 15px;
+}
+
+.tagname-remove-btn {
+  position: absolute;
+  right: 10px;
+  color: red;
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.create-option {
+  text-align: center;
+  font-weight: bold;
+  color: #2b3b4e;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #e0edff;
+  transition: background 0.2s ease;
+}
+
+.create-option:hover {
+  background-color: #c4d9eb;
+}
+
+.tagname-confirm-btn {
+  position: absolute;
+  right: 10px;
+  color: green;
+  font-size: 18px;
+  cursor: pointer;
+  border: 1px solid green;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: white;
+  opacity: 1;
+  pointer-events: auto;
+  transition: background 0.2s ease;
+}
+
+
+.tagname-autocomplete-item:hover .tagname-confirm-btn {
+  opacity: 1;
+}
+

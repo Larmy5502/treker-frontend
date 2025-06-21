@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import { useState, useEffect, useRef } from 'react';
 import TaskCard from './TaskCard';
 import { Droppable } from '@hello-pangea/dnd';
 import ColumnMenu from './ColumnMenu';
 import '../styles/BoardSection.css';
+=======
+import { useState, useEffect, useRef } from "react";
+import TaskCard from "./TaskCard";
+import { Droppable } from "@hello-pangea/dnd";
+import ColumnMenu from "./ColumnMenu";
+import "../styles/BoardSection.css";
+>>>>>>> 043711b (финал)
 
 function BoardSection({
   columnId,
@@ -12,6 +20,10 @@ function BoardSection({
   onRename,
   onMoveColumn,
   onDeleteColumn,
+<<<<<<< HEAD
+=======
+  onDeleteTask, // ✅ новый проп
+>>>>>>> 043711b (финал)
 }) {
   const [isEditing, setIsEditing] = useState(false);
   const [currentTitle, setCurrentTitle] = useState(title);
@@ -28,8 +40,13 @@ function BoardSection({
         setIsMenuOpen(false);
       }
     };
+<<<<<<< HEAD
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
+=======
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+>>>>>>> 043711b (финал)
   }, []);
 
   const handleBlur = () => {
@@ -40,13 +57,20 @@ function BoardSection({
   };
 
   const handleKeyDown = (e) => {
+<<<<<<< HEAD
     if (e.key === 'Enter') {
+=======
+    if (e.key === "Enter") {
+>>>>>>> 043711b (финал)
       handleBlur();
     }
   };
 
   const handleMove = (id, direction) => {
+<<<<<<< HEAD
     console.log('BoardSection.handleMove:', id, direction);
+=======
+>>>>>>> 043711b (финал)
     setIsMenuOpen(false);
     if (onMoveColumn) onMoveColumn(id, direction);
   };
@@ -61,6 +85,10 @@ function BoardSection({
       <div className="section-header column-header">
         {isEditing ? (
           <input
+<<<<<<< HEAD
+=======
+            spellCheck={false}
+>>>>>>> 043711b (финал)
             value={currentTitle}
             onChange={(e) => setCurrentTitle(e.target.value)}
             onBlur={handleBlur}
@@ -72,12 +100,20 @@ function BoardSection({
         ) : (
           <span
             onDoubleClick={() => setIsEditing(true)}
+<<<<<<< HEAD
             style={{ userSelect: 'none', cursor: 'pointer' }}
+=======
+            style={{ userSelect: "none", cursor: "pointer" }}
+>>>>>>> 043711b (финал)
           >
             {title}
           </span>
         )}
+<<<<<<< HEAD
         <div style={{ position: 'relative' }}>
+=======
+        <div style={{ position: "relative" }}>
+>>>>>>> 043711b (финал)
           <button
             className="column-menu-btn"
             onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -110,6 +146,10 @@ function BoardSection({
                 task={task}
                 index={index}
                 onClick={() => onTaskClick(task)}
+<<<<<<< HEAD
+=======
+                onDelete={onDeleteTask} // ✅ проброс удаления
+>>>>>>> 043711b (финал)
               />
             ))}
             {provided.placeholder}

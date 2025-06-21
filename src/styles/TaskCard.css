@@ -73,7 +73,11 @@
   font-size: 14px;
   font-weight: 600;
   color: #2b3b4e;
+<<<<<<< HEAD
   background-color: #CBDDED;
+=======
+  background-color: #2b3b4e;
+>>>>>>> 043711b (финал)
   border-radius: 999px;
   height: 28px;
   line-height: 28px;
@@ -90,3 +94,45 @@
   gap: 6px;
   font-family: 'Mulish', sans-serif;
 }
+<<<<<<< HEAD
+=======
+
+.task-priority {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.task-tag-badge {
+  background-color: #e5ecf8;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.priority-badge {
+  background-color: #d1e4ff;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.task-tag-badge {
+  background-color: #cdd8e9;
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.badge {
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  display: inline-block;
+  margin-right: 4px;
+}
+>>>>>>> 043711b (финал)

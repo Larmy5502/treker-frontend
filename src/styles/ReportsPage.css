@@ -1,5 +1,6 @@
 .reports-container {
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
   gap: 60px;
   padding: 60px 20px;
@@ -34,17 +35,52 @@
 .report-block {
   width: 400px;
   height: 480px;
+=======
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 20px;
+  background-color: #e6f2fd;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.report-block {
+  flex: 1 1 600px;
+  max-width: 900px;
+  height: 500px;
+>>>>>>> 043711b (финал)
   background-color: white;
   border: 1px solid #6c8cab;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
+<<<<<<< HEAD
   justify-content: flex-end;
+=======
+>>>>>>> 043711b (финал)
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .report-content {
   flex-grow: 1;
+<<<<<<< HEAD
+=======
+  display: flex;
+  justify-content: center; /* центр по горизонтали */
+  align-items: center; /* центр по вертикали */
+  padding: 16px;
+  overflow: hidden;
+  min-height: 400px;
+  text-align: center;
+}
+
+.report-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+>>>>>>> 043711b (финал)
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
 }
@@ -61,6 +97,16 @@
   color: #344b68;
 }
 
+<<<<<<< HEAD
 .main-content {
   padding: 0px;
+=======
+.report-loading,
+.report-error,
+.report-no-data {
+  font-size: 15px;
+  color: #777;
+  font-style: italic;
+  padding: 10px;
+>>>>>>> 043711b (финал)
 }
