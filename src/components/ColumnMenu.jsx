@@ -12,7 +12,11 @@ const ColumnMenu = forwardRef(({ columnId, title, onRename, onMove, onDelete }, 
       <div className="card-menu__title">{title}</div>
 
       <button className="card-menu__item" onClick={() => onRename(columnId)}>
+<<<<<<< HEAD
         Переименовать
+=======
+        ПЕРЕИМЕНОВАТЬ
+>>>>>>> 043711b (финал)
       </button>
 
       <div
@@ -37,7 +41,11 @@ const ColumnMenu = forwardRef(({ columnId, title, onRename, onMove, onDelete }, 
       </div>
 
       <button className="card-menu__item delete" onClick={() => onDelete(columnId)}>
+<<<<<<< HEAD
         Удалить колонку
+=======
+        УДАЛИТЬ КОЛОНКУ
+>>>>>>> 043711b (финал)
       </button>
     </div>
   );

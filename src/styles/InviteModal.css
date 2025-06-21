@@ -1,0 +1,109 @@
+/* src/styles/InviteModal.css */
+.invite-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.invite-modal-content {
+  background-color: #C4D9EB;
+  color: #4A6392;
+  padding: 24px;
+  border-radius: 10px;
+  border: 2px solid #4A6392;
+  width: 420px;
+  font-family: 'Mulish', sans-serif;
+  position: relative;
+}
+
+.invite-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #4A6392;
+}
+
+.invite-label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.invite-link-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #4A6392;
+  border-radius: 6px;
+  background-color: #f5faff;
+}
+
+.invite-link-input {
+  flex: 1;
+  border: 1px #4A6392;
+  padding: 10px;
+  font-size: 14px;
+  background: transparent;
+  color: #4A6392;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+  font-size: 18px;
+  color: #4A6392;
+}
+
+.copy-button {
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.copy-button:hover {
+  transform: scale(1.1);
+}
+
+.copy-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.invite-modal {
+  padding: 16px 20px;
+  max-width: 360px;
+  background-color: #C4D9EB;
+  color: #4A6392;
+  border: 2px solid #4A6392;
+  border-radius: 10px;
+  font-family: 'Mulish', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.invite-modal h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

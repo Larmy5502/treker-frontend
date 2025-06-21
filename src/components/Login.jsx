@@ -17,21 +17,28 @@ function Login() {
 
     try {
 <<<<<<< HEAD
+<<<<<<< HEAD
       setLoading(true)
       setError('')
 
 =======
+=======
+>>>>>>> 043711b (финал)
       setLoading(true);
       setError('');
 
       // 🔐 Запрос на логин
+<<<<<<< HEAD
 >>>>>>> ace2cd8 (финал 1)
+=======
+>>>>>>> 043711b (финал)
       const response = await fetch('http://localhost:8000/auth/jwt/create/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, password }),
+<<<<<<< HEAD
 <<<<<<< HEAD
       })
 
@@ -53,6 +60,8 @@ function Login() {
     }
   }
 =======
+=======
+>>>>>>> 043711b (финал)
       });
 
       const data = await response.json();
@@ -110,7 +119,10 @@ function Login() {
     }
   };
 
+<<<<<<< HEAD
 >>>>>>> ace2cd8 (финал 1)
+=======
+>>>>>>> 043711b (финал)
 
   return (
     <div className="login-wrapper">

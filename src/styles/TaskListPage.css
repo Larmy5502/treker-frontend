@@ -1,6 +1,15 @@
 .task-list-wrapper {
   background-color: #eaf6ff;
+<<<<<<< HEAD
   font-family: 'Mulish', sans-serif;
+=======
+  font-family: "Mulish", sans-serif;
+
+  width: 100%;
+  max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 16px;
+>>>>>>> 043711b (финал)
 }
 
 .task-list-header {
@@ -43,10 +52,23 @@
   border-right: none;
 }
 
+<<<<<<< HEAD
 
 .cell.checkbox { width: 40px; justify-content: center; }
 .cell.id { width: 80px; }
 .cell.title { flex: 2; }
+=======
+.cell.checkbox {
+  width: 40px;
+  justify-content: center;
+}
+.cell.id {
+  width: 80px;
+}
+.cell.title {
+  flex: 2;
+}
+>>>>>>> 043711b (финал)
 .cell.priority,
 .cell.type,
 .cell.tag,

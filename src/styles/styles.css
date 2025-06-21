@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #eaf6ff;
   height: 100vh;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 .login-wrapper {
@@ -86,7 +86,7 @@ body {
   border-radius: 8px;
   font-size: 16px;
   font-style: italic;
-  color: #464A4C;
+  color: #464a4c;
   background: #fff;
   box-sizing: border-box;
   margin-bottom: 1.5rem;
@@ -102,7 +102,7 @@ body {
   width: 375px;
   height: 38.67px;
   background-color: #c0def5;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
   font-weight: 900;
   font-size: 14px;
   border: 1px solid #000;
@@ -123,7 +123,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   cursor: pointer;
-  color: #464A4C;
+  color: #464a4c;
 }
 
 
@@ -140,7 +140,6 @@ body {
   max-width: 548px;
 }
 
-
 .register-box {
   display: flex;
   flex-direction: column;
@@ -152,7 +151,6 @@ body {
   border-radius: 0;
   padding-top: 3rem;
 }
-
 
 .register-box h2 {
   font-weight: 1000;
@@ -179,7 +177,7 @@ body {
   font-family: inherit;
   font-size: 16px;
   font-style: italic;
-  color: #464A4C;
+  color: #464a4c;
   background: #fff;
   box-sizing: border-box;
   text-align: center;
@@ -196,7 +194,7 @@ body {
   border-radius: 8px;
   font-size: 16px;
   font-style: italic;
-  color: #464A4C;
+  color: #464a4c;
   background: #fff;
   box-sizing: border-box;
   margin-bottom: 14px;
@@ -231,7 +229,7 @@ body {
   width: 375px;
   height: 38.67px;
   background-color: #c0def5;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
   font-weight: 900;
   font-size: 14px;
   border: 1px solid #000;
@@ -252,7 +250,7 @@ body {
   font-size: 20px;
   font-weight: 900;
   cursor: pointer;
-  color: #464A4C;
-  margin: 70px 0px 0px -135px;
+  color: #464a4c;
+  margin: -700px 10px -100px -90px;
   align-self: flex-start;
 }

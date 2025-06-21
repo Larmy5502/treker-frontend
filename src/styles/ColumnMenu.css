@@ -4,20 +4,45 @@
   right: 0;
   width: 260px;
   background-color: #c6d9ec;
+<<<<<<< HEAD
   border: 1px solid #a5b4c4;
+=======
+  border: 2px solid #4A6392;
+>>>>>>> 043711b (финал)
   border-radius: 8px;
   font-family: 'Mulish', sans-serif;
   font-size: 13px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   z-index: 30;
+<<<<<<< HEAD
+=======
+  max-width: calc(100vw - 20px);
+  box-sizing: border-box;
+  max-width: 260px;
+  inset-inline-end: 0;
+  inset-inline-start: auto;
+  translate: 0% 0;
+>>>>>>> 043711b (финал)
 }
 
 .column-menu .card-menu__title {
   font-weight: bold;
+<<<<<<< HEAD
   color: #0d1b2a;
   padding: 10px 16px;
   border-bottom: 1px solid #a4b2c7;
+=======
+  color: #2b3b4e;
+  padding: 10px 16px;
+  border-bottom: 1px solid #4A6392;
+  font-family: 'Mulish', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-break: break-word;
+>>>>>>> 043711b (финал)
 }
 
 .column-menu .card-menu__item {
@@ -30,8 +55,16 @@
   cursor: pointer;
   color: #2b3b4e;
   gap: 8px;
+<<<<<<< HEAD
   border-bottom: 1px solid #a4b2c7;
   box-sizing: border-box;
+=======
+  border-bottom: 1px solid #4A6392;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+>>>>>>> 043711b (финал)
 }
 
 .column-menu .card-menu__item.delete {
@@ -53,6 +86,12 @@
 
 .card-menu__item.no-hover {
   cursor: default;
+<<<<<<< HEAD
+=======
+  font-family: 'Mulish', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+>>>>>>> 043711b (финал)
 }
 
 .card-menu__item.no-hover:hover {
@@ -67,10 +106,18 @@
 }
 
 .column-menu .card-menu__submenu {
+<<<<<<< HEAD
   flex-direction: row !important; /* стрелки горизонтально */
   gap: 8px;
   width: auto; /* чтобы не сжимать */
   padding: 0;
+=======
+  flex-direction: row !important;
+  gap: 8px;
+  width: auto;
+  padding: 0;
+  border:0;
+>>>>>>> 043711b (финал)
   justify-content: flex-start;
 }
 
